@@ -23,7 +23,7 @@ if __name__ == '__main__':
     test_input = preprocess(orig_img, (300, 300))
     
     start = time.time()
-    for i in range(opt.rep):
+    for i in tqdm(range(opt.rep)):
         raw_result = session.run([], {input_name:test_input})[0]
     time_elpased = time.time() - start
     print(f"# [{opt.mode}] total elpased time = {time_elpased:.2f}s")
